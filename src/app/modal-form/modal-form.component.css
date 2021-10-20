@@ -1,0 +1,97 @@
+.homeagain {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0;
+}
+
+.homeagain form {
+    margin-top: 7rem;
+    background: #fff;
+    border-radius: 3rem;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+    border: .1rem solid rgba(0, 0, 0, .2);
+    width: 42rem;
+    padding: 2rem;
+}
+
+.homeagain form h3,
+h2,
+h1,
+h4 {
+    text-align: center;
+    color: #333;
+    font-size: 2.5rem;
+}
+
+.homeagain form h3 {
+    text-align: center;
+    color: #333;
+    font-size: 2rem;
+}
+
+.homeagain form h4 {
+    font-size: 1.5rem;
+}
+
+.homeagain form h2 {
+    color: #176B87;
+    font-size: 2rem;
+}
+
+.homeagain form h1 {
+    color: #9D7F1E;
+}
+
+#email,
+#fname,
+#phone,
+.btn {
+    border-radius: 2rem;
+}
+
+.homeagain form .buttons-container {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.homeagain form .buttons-container .btn {
+    flex: 1;
+}
+
+.label {
+    font-size: 1.4rem;
+}
+
+.homeagain form .inputBox {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+.homeagain form .inputBox input,
+.homeagain form .inputBox select {
+    /* flex:1 1 25rem; */
+    border: .1rem solid #333;
+    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+    font-size: 1.5rem;
+    padding: 1rem;
+    text-transform: none;
+}
+
+.homeagain form .btn {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+::ng-deep .mat-dialog-container {
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+}

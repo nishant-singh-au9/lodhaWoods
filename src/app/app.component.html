@@ -39,15 +39,15 @@
         <div class="inputBox">
 
             <label for="email" class="label">Enter your name:</label>
-            <input type="text" id="fname" placeholder="Name" name="fname">
+            <input type="text" id="fname" placeholder="Name" name="fname" [(ngModel)]="topForm.name">
             <label for="email" class="label">Enter your  number:</label>
-            <input type="tel" id="phone" name="phone" placeholder="Phone Number" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required>
+            <input type="tel" id="phone" name="phone" placeholder="Phone Number" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required [(ngModel)]="topForm.phone">
             <label for="email" class="label">Enter your email:</label>
-            <input type="email" placeholder="Email" id="email" name="email">
+            <input type="email" placeholder="Email" id="email" name="email" [(ngModel)]="topForm.email">
 
         </div>
 
-        <input type="submit" value="search property" class="btn">
+        <input type="submit" class="btn" (click)="submitForm('top')">
 
     </form>
 
@@ -69,7 +69,7 @@
             <p>Rs 2.07 Cr* Onwards</p>
             <p>Area 725 sqft</p>
             <p>2 BHK</p>
-            <a href="#" class="btn">Price Breakup</a>
+            <a (click)="openDialog()" class="btn">Price Breakup</a>
         </div>
 
         <div class="box">
@@ -78,7 +78,7 @@
             <p>Rs 2.19 Cr* Onwards</p>
             <p>Area 775 sqft</p>
             <p>2 BHK</p>
-            <a href="#" class="btn">Price Breakup</a>
+            <a (click)="openDialog()" class="btn">Price Breakup</a>
         </div>
 
         <div class="box">
@@ -87,7 +87,7 @@
             <p>Rs 2.79 Cr* Onwards </p>
             <p>Area 975 sqft</p>
             <p>3 BHK</p>
-            <a href="#" class="btn">Price Breakup</a>
+            <a (click)="openDialog()" class="btn">Price Breakup</a>
         </div>
 
     </div>
@@ -113,10 +113,10 @@
                     <h3>for rent</h3>
                 </div>
                 <div class="icons">
-                    <a href="#" class="fas fa-film">
+                    <a (click)="openDialog()" class="fas fa-film">
                         <h3>1</h3>
                     </a>
-                    <a href="#" class="fas fa-camera">
+                    <a (click)="openDialog()" class="fas fa-camera">
                         <h3>4</h3>
                     </a>
                 </div>
@@ -124,9 +124,9 @@
             <div class="content">
                 <div class="price">
                     <h3>Rs 2.07cr</h3>
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="fas fa-envelope"></a>
-                    <a href="#" class="fas fa-phone"></a>
+                    <a (click)="openDialog()" class="fas fa-heart"></a>
+                    <a (click)="openDialog()" class="fas fa-envelope"></a>
+                    <a (click)="openDialog()" class="fas fa-phone"></a>
                 </div>
                 <div class="location">
                     <h3>modern apartments</h3>
@@ -138,8 +138,8 @@
                     <h3> <i class="fas fa-bath"></i> 2 baths </h3>
                 </div>
                 <div class="buttons">
-                    <a href="#" class="btn">request info</a>
-                    <a href="#" class="btn">view details</a>
+                    <a (click)="openDialog()" class="btn">request info</a>
+                    <a (click)="openDialog()" class="btn">view details</a>
                 </div>
             </div>
         </div>
@@ -152,10 +152,10 @@
                     <h3>for sell</h3>
                 </div>
                 <div class="icons">
-                    <a href="#" class="fas fa-film">
+                    <a (click)="openDialog()" class="fas fa-film">
                         <h3>2</h3>
                     </a>
-                    <a href="#" class="fas fa-camera">
+                    <a (click)="openDialog()" class="fas fa-camera">
                         <h3>7</h3>
                     </a>
                 </div>
@@ -163,9 +163,9 @@
             <div class="content">
                 <div class="price">
                     <h3>Rs 2.19cr</h3>
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="fas fa-envelope"></a>
-                    <a href="#" class="fas fa-phone"></a>
+                    <a (click)="openDialog()" class="fas fa-heart"></a>
+                    <a (click)="openDialog()" class="fas fa-envelope"></a>
+                    <a (click)="openDialog()" class="fas fa-phone"></a>
                 </div>
                 <div class="location">
                     <h3>modern apartments</h3>
@@ -177,8 +177,8 @@
                     <h3> <i class="fas fa-bath"></i> 2 baths </h3>
                 </div>
                 <div class="buttons">
-                    <a href="#" class="btn">request info</a>
-                    <a href="#" class="btn">view details</a>
+                    <a (click)="openDialog()" class="btn">request info</a>
+                    <a (click)="openDialog()" class="btn">view details</a>
                 </div>
             </div>
         </div>
@@ -191,10 +191,10 @@
                     <h3>for rent</h3>
                 </div>
                 <div class="icons">
-                    <a href="#" class="fas fa-film">
+                    <a (click)="openDialog()" class="fas fa-film">
                         <h3>1</h3>
                     </a>
-                    <a href="#" class="fas fa-camera">
+                    <a (click)="openDialog()" class="fas fa-camera">
                         <h3>6</h3>
                     </a>
                 </div>
@@ -202,9 +202,9 @@
             <div class="content">
                 <div class="price">
                     <h3>Rs 2.79cr</h3>
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="fas fa-envelope"></a>
-                    <a href="#" class="fas fa-phone"></a>
+                    <a (click)="openDialog()" class="fas fa-heart"></a>
+                    <a (click)="openDialog()" class="fas fa-envelope"></a>
+                    <a (click)="openDialog()" class="fas fa-phone"></a>
                 </div>
                 <div class="location">
                     <h3>modern apartments</h3>
@@ -216,8 +216,8 @@
                     <h3> <i class="fas fa-bath"></i> 2 baths </h3>
                 </div>
                 <div class="buttons">
-                    <a href="#" class="btn">request info</a>
-                    <a href="#" class="btn">view details</a>
+                    <a (click)="openDialog()" class="btn">request info</a>
+                    <a (click)="openDialog()" class="btn">view details</a>
                 </div>
             </div>
         </div>
@@ -230,10 +230,10 @@
                     <h3>for rent</h3>
                 </div>
                 <div class="icons">
-                    <a href="#" class="fas fa-film">
+                    <a (click)="openDialog()" class="fas fa-film">
                         <h3>2</h3>
                     </a>
-                    <a href="#" class="fas fa-camera">
+                    <a (click)="openDialog()" class="fas fa-camera">
                         <h3>6</h3>
                     </a>
                 </div>
@@ -241,9 +241,9 @@
             <div class="content">
                 <div class="price">
                     <h3>Rs 2.93cr</h3>
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="fas fa-envelope"></a>
-                    <a href="#" class="fas fa-phone"></a>
+                    <a (click)="openDialog()" class="fas fa-heart"></a>
+                    <a (click)="openDialog()" class="fas fa-envelope"></a>
+                    <a (click)="openDialog()" class="fas fa-phone"></a>
                 </div>
                 <div class="location">
                     <h3>modern apartments</h3>
@@ -255,8 +255,8 @@
                     <h3> <i class="fas fa-bath"></i> 2 baths </h3>
                 </div>
                 <div class="buttons">
-                    <a href="#" class="btn">request info</a>
-                    <a href="#" class="btn">view details</a>
+                    <a (click)="openDialog()" class="btn">request info</a>
+                    <a (click)="openDialog()" class="btn">view details</a>
                 </div>
             </div>
         </div>
@@ -269,10 +269,10 @@
                     <h3>for sell</h3>
                 </div>
                 <div class="icons">
-                    <a href="#" class="fas fa-film">
+                    <a (click)="openDialog()" class="fas fa-film">
                         <h3>3</h3>
                     </a>
-                    <a href="#" class="fas fa-camera">
+                    <a (click)="openDialog()" class="fas fa-camera">
                         <h3>8</h3>
                     </a>
                 </div>
@@ -280,9 +280,9 @@
             <div class="content">
                 <div class="price">
                     <h3>Rs 2.07cr</h3>
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="fas fa-envelope"></a>
-                    <a href="#" class="fas fa-phone"></a>
+                    <a (click)="openDialog()" class="fas fa-heart"></a>
+                    <a (click)="openDialog()" class="fas fa-envelope"></a>
+                    <a (click)="openDialog()" class="fas fa-phone"></a>
                 </div>
                 <div class="location">
                     <h3>modern apartments</h3>
@@ -294,8 +294,8 @@
                     <h3> <i class="fas fa-bath"></i> 2 baths </h3>
                 </div>
                 <div class="buttons">
-                    <a href="#" class="btn">request info</a>
-                    <a href="#" class="btn">view details</a>
+                    <a (click)="openDialog()" class="btn">request info</a>
+                    <a (click)="openDialog()" class="btn">view details</a>
                 </div>
             </div>
         </div>
@@ -308,10 +308,10 @@
                     <h3>for sell</h3>
                 </div>
                 <div class="icons">
-                    <a href="#" class="fas fa-film">
+                    <a (click)="openDialog()" class="fas fa-film">
                         <h3>1</h3>
                     </a>
-                    <a href="#" class="fas fa-camera">
+                    <a (click)="openDialog()" class="fas fa-camera">
                         <h3>4</h3>
                     </a>
                 </div>
@@ -319,9 +319,9 @@
             <div class="content">
                 <div class="price">
                     <h3>Rs 2.19cr</h3>
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="fas fa-envelope"></a>
-                    <a href="#" class="fas fa-phone"></a>
+                    <a (click)="openDialog()" class="fas fa-heart"></a>
+                    <a (click)="openDialog()" class="fas fa-envelope"></a>
+                    <a (click)="openDialog()" class="fas fa-phone"></a>
                 </div>
                 <div class="location">
                     <h3>modern apartments</h3>
@@ -333,8 +333,8 @@
                     <h3> <i class="fas fa-bath"></i> 2 baths </h3>
                 </div>
                 <div class="buttons">
-                    <a href="#" class="btn">request info</a>
-                    <a href="#" class="btn">view details</a>
+                    <a (click)="openDialog()" class="btn">request info</a>
+                    <a (click)="openDialog()" class="btn">view details</a>
                 </div>
             </div>
         </div>
@@ -385,15 +385,15 @@
 
         <form action="">
             <div class="inputBox">
-                <input type="text" placeholder="name">
-                <input type="number" placeholder="number">
+                <input type="text" placeholder="name" name="name" [(ngModel)]="bottomForm.name">
+                <input type="number" placeholder="number" name="number" [(ngModel)]="bottomForm.phone">
             </div>
             <div class="inputBox">
-                <input type="email" placeholder="email">
-                <input type="text" placeholder="subject">
+                <input type="email" placeholder="email" name="number" [(ngModel)]="bottomForm.email">
+                <input type="text" placeholder="subject" name="subject" [(ngModel)]="bottomForm.subject">
             </div>
-            <textarea name="" placeholder="message" id="" cols="30" rows="10"></textarea>
-            <input type="submit" value="send message" class="btn">
+            <textarea name="" placeholder="message" id="" cols="30" rows="10" name="message" [(ngModel)]="bottomForm.message"></textarea>
+            <input type="submit" (click)="submitForm('bottom')" class="btn">
         </form>
 
 

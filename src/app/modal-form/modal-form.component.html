@@ -1,0 +1,26 @@
+<section class="homeagain">
+
+    <form action="">
+        <h2>Booking Open Now</h2>
+        <h1>LODHA WOODS </h1>
+        <h4>By Lodha Group</h4>
+        <h3>find your perfect home</h3>
+
+
+
+        <div class="inputBox">
+
+            <label for="email" class="label">Enter your name:</label>
+            <input type="text" id="fname" placeholder="Name" name="fname" [(ngModel)]="topForm.name">
+            <label for="email" class="label">Enter your  number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Phone Number" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required [(ngModel)]="topForm.phone">
+            <label for="email" class="label">Enter your email:</label>
+            <input type="email" placeholder="Email" id="email" name="email" [(ngModel)]="topForm.email">
+
+        </div>
+
+        <input type="submit" class="btn" (click)="submitForm('top')">
+
+    </form>
+
+</section>
