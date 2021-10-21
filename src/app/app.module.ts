@@ -5,7 +5,10 @@ import { AppComponent } from './app.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalFormComponent } from './modal-form/modal-form.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { FormsModule } from '@angular/forms';
+import { AppService } from "./services/app.services"
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -16,9 +19,11 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     NoopAnimationsModule,
     MatDialogModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    MatSnackBarModule
   ],
-  providers: [],
+  providers: [AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

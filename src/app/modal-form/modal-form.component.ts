@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AppService } from "../services/app.services"
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-modal-form',
@@ -13,13 +15,25 @@ export class ModalFormComponent implements OnInit {
     phone: ""
   }
 
-  constructor() { }
+  constructor(public appService: AppService, public snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
   }
 
 
   submitForm(whichForm: string){
-      console.log(this.topForm)
+    this.appService.sendTopMail(this.topForm).subscribe((data: any) => {
+      if(data.err){
+        this.openSnackBar('Isuue while saving response, please try again later.')
+      }else{
+        this.openSnackBar('Response a, you will be contacted soon.')
+      }
+    })
+  }
+
+  openSnackBar = (message: string) => {
+    this.snackBar.open(message,'',{
+      duration: 3000
+    })
   }
 }

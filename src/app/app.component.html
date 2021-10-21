@@ -10,7 +10,7 @@
         <a href="#" class="logo"><span>LODHA</span>WOODS</a>
     </div>
 
-    <nav class="navbar">
+    <nav class="navbar" [ngClass]="isNavBar ? 'active' : ''">
         <a href="#home">Home</a>
         <a href="#services">Price</a>
         <a href="#featured">featured</a>
@@ -20,7 +20,7 @@
 
 
     <div class="icons">
-        <div id="menu-bars" class="fas fa-bars"></div>
+        <div id="menu-bars" class="fas fa-bars" (click)="toggleNavbar()" [ngClass]="isNavBar ? 'fa-times' : ''"></div>
         <a href="#" class="fas fa-user"></a>
     </div>
 

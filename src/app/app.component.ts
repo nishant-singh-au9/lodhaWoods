@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ModalFormComponent } from "./modal-form/modal-form.component"
+import { AppService } from "./services/app.services"
+import {MatSnackBar} from '@angular/material/snack-bar';
+import { flatten } from '@angular/compiler';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +12,7 @@ import { ModalFormComponent } from "./modal-form/modal-form.component"
 })
 export class AppComponent implements OnInit {
   title = 'Lodha-Woods';
+  isNavBar = false
 
   topForm = {
     name : "",
@@ -26,7 +30,7 @@ export class AppComponent implements OnInit {
   }
 
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog, public appService: AppService, public snackBar: MatSnackBar) {}
 
   openDialog(): void {
 
@@ -39,12 +43,35 @@ export class AppComponent implements OnInit {
     this.openDialog()
   }
 
+  toggleNavbar(){
+    this.isNavBar = !this.isNavBar
+  }
+
   submitForm(whichForm: string){
     if(whichForm === 'top'){
-      console.log(this.topForm)
+      this.appService.sendTopMail(this.topForm).subscribe((data: any) => {
+        console.log(data)
+        if(data.err){
+          this.openSnackBar('Isuue while saving response, please try again later.')
+        }else{
+          this.openSnackBar('Response recorded, you will be contacted soon.')
+        }
+      })
     }else{
-      console.log(this.bottomForm)
+      this.appService.sendBottomMail(this.bottomForm).subscribe((data: any) => {
+        if(data.err){
+          this.openSnackBar('Isuue while saving response, please try again later.')
+        }else{
+          this.openSnackBar('Response recorded, you will be contacted soon.')
+        }
+      })
     }
+  }
+
+  openSnackBar = (message: string) => {
+    this.snackBar.open(message,'',{
+      duration: 3000
+    })
   }
 
 }
