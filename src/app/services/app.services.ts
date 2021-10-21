@@ -10,7 +10,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 
-const API_URL = 'https://lodhawoods-be.herokuapp.com/'
+const API_URL = 'https://lodhawoods-be.herokuapp.com'
 
 
 @Injectable()
@@ -18,14 +18,18 @@ export class AppService {
   constructor(private http: HttpClient) {}
   public sendTopMail(body: any): Observable<any>{
     return this.http
-      .post(`${API_URL}/sendTopForm`, body)
+      .post(`${API_URL}/sendTopForm`, body,  {headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })})
       .map((response: any) => response)
       .catch(this.handleError);
   }
 
   public sendBottomMail(body: any): Observable<any>{
     return this.http
-      .post(`${API_URL}/sendBottomForm`, body)
+      .post(`${API_URL}/sendBottomForm`, body,  {headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })})
       .map((response: any) => response)
       .catch(this.handleError);
   }
