@@ -26,7 +26,7 @@ export class ModalFormComponent implements OnInit {
       if(data.err){
         this.openSnackBar('Isuue while saving response, please try again later.')
       }else{
-        this.openSnackBar('Response a, you will be contacted soon.')
+        this.openSnackBar('Response recorded, you will be contacted soon.')
       }
     })
   }
